@@ -15,6 +15,7 @@
 package main
 
 import (
+	"fmt"
 	"context"
 	"os"
 
@@ -59,6 +60,8 @@ func listen(app *cli.Cli, conf *string) {
 		app.Run([]string{"emitter", "license", "new"})
 		return
 	}
+
+	fmt.Println("%v", cfg)
 
 	// Start new service
 	svc, err := broker.NewService(context.Background(), cfg)
