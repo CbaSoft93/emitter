@@ -33,8 +33,9 @@ import (
 //go:generate go run internal/broker/generate/assets_gen.go
 
 func main() {
-	fmt.Println("EL PUERTO ES")
-	fmt.Println(os.Getenv("PORT"))
+	port := os.Getenv("PORT")
+	os.Setenv("EMITTER_LISTEN", port)
+	
 	app := cli.App("emitter", "Runs the Emitter broker.")
 	app.Spec = "[ -c=<configuration path> ] "
 	confPath := app.StringOpt("c config", "emitter.conf", "Specifies the configuration path (file) to use for the broker.")
