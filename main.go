@@ -15,7 +15,6 @@
 package main
 
 import (
-	"fmt"
 	"context"
 	"os"
 
@@ -35,7 +34,7 @@ import (
 func main() {
 	port := os.Getenv("PORT")
 	os.Setenv("EMITTER_LISTEN", port)
-	
+
 	app := cli.App("emitter", "Runs the Emitter broker.")
 	app.Spec = "[ -c=<configuration path> ] "
 	confPath := app.StringOpt("c config", "emitter.conf", "Specifies the configuration path (file) to use for the broker.")
