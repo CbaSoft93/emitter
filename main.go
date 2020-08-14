@@ -33,7 +33,7 @@ import (
 
 func main() {
 	port := os.Getenv("PORT")
-	os.Setenv("EMITTER_LISTEN", port)
+	os.Setenv("EMITTER_LISTEN", ":" + port)
 
 	app := cli.App("emitter", "Runs the Emitter broker.")
 	app.Spec = "[ -c=<configuration path> ] "
