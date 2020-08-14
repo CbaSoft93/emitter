@@ -61,7 +61,7 @@ func listen(app *cli.Cli, conf *string) {
 		return
 	}
 
-	fmt.Println("%v", cfg)
+	fmt.Println(cfg)
 
 	// Start new service
 	svc, err := broker.NewService(context.Background(), cfg)
